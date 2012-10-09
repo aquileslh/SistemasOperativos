@@ -2,7 +2,7 @@
  * @autor: Lazaro Hernandez Aquiles.
  * @fecha: 07/oct/2012
  * @descripción: Crea proceso de forma lineal con la llamada al sistema fork(). Y en el 
- * 				 proceso penultimo y ultimo se crean procesos distintos con execl() fuera del siclo for().
+ * 				 proceso penultimo y ultimo se crean procesos distintos con system() fuera del siclo for().
  */
 #include <unistd.h>
 #include <stdio.h>
@@ -20,14 +20,10 @@ void main(){
 			break;
 	}
 	if(i == MAX-2){ //@descripción: Si es el ultimo proceso.
-		val = fork(); //@descripción: Se crea un proceso.
-		if(val == 0) 
-			execl("./hola2",NULL,NULL); //@descripción: Si el proceso es el hijo, ejecuta al proceso hola2 y muere.
+			system("./hola2"); //@descripción: Ejecuta al proceso hola2.
 	}
 	if(i == MAX-1){ //@descripción: Si es el penultimo proceso.
-		val = fork(); //@descripción: Se crea un proceso.
-		if(val == 0)
-			execl("./hola1",NULL,NULL); //@descripción: Si el proceso es el hijo, ejecuta al proceso hola1 y muere.
+			system("./hola1"); //@descripción: Ejecuta al proceso hola1.
 	}
 	sleep(20); //@descripción: Suspende la ejecución del programa.
 }
