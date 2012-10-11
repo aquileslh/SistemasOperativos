@@ -41,7 +41,6 @@ shm2=shmat(ide_mem_com2,NULL,0);
 *shm2=0;
 //Creacion de proceso
 id=fork();
-
 if (id!=0){
    //@Muestra el pid del proceso
    printf("soy el proceso padre %d\n",getpid());

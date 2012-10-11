@@ -33,7 +33,6 @@ shm=shmat(ide_mem_com,NULL,0);
 *shm=0;
 //Creacion de proceso
 id=fork();
-
 if (id!=0){
    //@Muestra el pid del proceso
    printf("soy el proceso padre %d\n",getpid());
@@ -44,7 +43,6 @@ if (id!=0){
    //@Para esperar al hijo creado
    hijo=wait(&status);
    printf("variable compartida DESPUES %d\n",*shm);
-
   }else{
     //@Muestra el pid del proceso
    printf("soy el proceso hijo %d\n",getpid());
