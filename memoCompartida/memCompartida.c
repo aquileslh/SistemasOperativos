@@ -11,7 +11,7 @@
 #include <sys/ipc.h>
 #include <stdlib.h>
 
-#define N 100000
+#define N 1000000
 
 int main(){
 //Declaracion de Variables 
